@@ -2,11 +2,15 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const bodyParser = require('body-parser');
-const db = require('./connection');
+const db = require('./src/config/connection');
 const response = require('./response');
+const userRouter = require('./src/routes/user');
 
 
 app.use(bodyParser.json());
+
+
+app.use('/user', userRouter);
 
 app.get('/', (req, res) => {
         response(200 ,"API v1 ready to go","success",res)
