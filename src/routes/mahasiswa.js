@@ -1,7 +1,7 @@
 
 import express from 'express';
 const router = express.Router();
-import { getAllMahasiswaController, getMahasiswaByNimController, postMahasiswaController } from '../controller/mahasiswaController.js';
+import { getAllMahasiswaController, getMahasiswaByNimController, postMahasiswaController, putMahasiswaController, deleteMahasiswaController } from '../controller/mahasiswaController.js';
 
 // get all mahasiswa
 router.get('/', getAllMahasiswaController);
@@ -9,6 +9,13 @@ router.get('/', getAllMahasiswaController);
 router.get('/:nim', getMahasiswaByNimController);
 // post mahasiswa
 router.post('/', postMahasiswaController);
+
+// put mahasiswa
+router.put('/:nim', putMahasiswaController);
+
+// delete mahasiswa
+router.delete('/:nim', deleteMahasiswaController);
+
 
 
 
